@@ -1,10 +1,10 @@
 <?php
 
-// Takes raw data from the request
+// RAW Daten aus php input sammeln
 
 $json = file_get_contents('php://input');
 
-// Converts it into a PHP object
+// JSON in PHP Objekt dekodieren
 $data = json_decode($json);
 if (isset($data)) {
     foreach ($data as $jsondata) {
