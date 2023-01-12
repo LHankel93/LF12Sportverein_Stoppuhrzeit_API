@@ -13,6 +13,11 @@ $uploadfile = $uploaddir . 'pic.png';
     # LH HIER MUSS DANN DIE PROZESSKETTE ANGESTOSSEN WERDEN, UM DAS BILD AUSZULESEN MIT TESSERACT!
     # DIE ANTWORT (RESPONSE) KANN DANN EINFACH ALS echo BEFEHL ausgegeben werden! (Siehe ../view/testpost.php)
     echo "Upload erfolgreich.\n";
+    $a = "../uploads/pic.png";
+    $command = "python ../pyscripts/Bot.py " . $a;
+    echo ("<br>Das Kommando das ausgeführt wird: $command<br>");
+    $output = shell_exec($command);
+    echo ($output);
 } else {
     # Wenn Datei-Upload Fehlerhaft: 
     echo "Possible file upload attack!\n";
