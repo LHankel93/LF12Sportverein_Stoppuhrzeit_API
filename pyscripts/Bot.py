@@ -1,8 +1,9 @@
+import sys
 from PIL import Image
 from pytesseract import pytesseract
 
 class getText:
-    def extract_text_from_image(image_path):
+    def extract_text_from_image(image_path: str):
         # Laden des Bildes
         image = Image.open(image_path)
 
@@ -10,8 +11,10 @@ class getText:
         text = pytesseract.image_to_string(image)
 
         #Ausgabe des extrahieren Texts
-        print(text)
+        #print(text)
+        return text
 
     #Beispieleaufruf TODO
-    extract_text_from_image("/Users/Gurjit/LF12Sportverein_Stoppuhrzeit/image")
+    n = str(sys.argv[1])
+    extract_text_from_image(n)
    
